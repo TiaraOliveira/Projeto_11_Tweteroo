@@ -28,8 +28,10 @@ app.post("/tweets", (req, res) => {
 
 app.get("/tweets", (req, res) => {
 const mostrar = tweets.slice(tweets.length - 10, tweets.length)
+
   if (tweets.length <= 10) {
-    res.send(tweets);
+    const novo = tweets.reverse()
+    res.send(novo);
   } else {
     res.send(mostrar.reverse());
   }
